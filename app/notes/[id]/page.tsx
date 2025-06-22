@@ -25,5 +25,3 @@ const NoteDetails = async ({ params }: Props) => {
 
 export default NoteDetails;
 
-
-// Реалізуйте сторінковий компонент NoteDetails у маршруті /notes/[id] як SSR-компонент, де заздалегідь виконується prefetch (попереднє завантаження даних через TanStack Query) з гідратацією кеша.

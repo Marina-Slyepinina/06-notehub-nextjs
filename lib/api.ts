@@ -2,7 +2,7 @@ import axios from "axios"
 import { type NewNote, type Note } from "../types/note";
 const token = process.env.NEXT_PUBLIC_NOTEHUB_TOKEN;
 
-interface NotesResponse {
+export interface NotesResponse {
     notes: Note[],
     totalPages: number,
 }
@@ -41,7 +41,7 @@ export const deleteNote = async (id: number): Promise<Note> => {
     return res.data;
 }
 
-export const fetchNoteById = async (id: number) => {
+export const fetchNoteById = async (id: number): Promise<Note> => {
     const res = await axios.get<Note>(`https://notehub-public.goit.study/api/notes/${id}`, {
         headers: {
             Authorization: `Bearer ${token}`,
